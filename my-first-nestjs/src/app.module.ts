@@ -4,8 +4,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthorModule } from './author/author.module';
 import { ArticleModule } from './article/article.module';
-import { AuthorModule }
-import { ArticleModule }
 
 @Module({
   imports: [

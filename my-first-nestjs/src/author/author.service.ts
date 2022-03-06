@@ -20,5 +20,5 @@ export class AuthorService {
 
     findById(id: number): Promise<Author> {
         return this.authorRepository.findOne(id);
-    }
+    } 
 }
