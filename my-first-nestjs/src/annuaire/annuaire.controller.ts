@@ -2,7 +2,9 @@ import { Controller, Get, Post, Param, Query, Body, ParseIntPipe, DefaultValuePi
 import { AnnuaireService } from '../annuaire/annuaire.service';
 import { Annuaire } from './annuaire.entity';
 import { Pagination } from 'nestjs-typeorm-paginate';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('annuaire')
 @Controller('annuaire')
 export class AnnuaireController {
     constructor(private readonly annuaireService : AnnuaireService) {}
