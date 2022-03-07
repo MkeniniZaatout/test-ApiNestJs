@@ -3,6 +3,11 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ApiTags } from '@nestjs/swagger';
 import { Annuaire } from './annuaire.entity';
+import {
+    paginate,
+    Pagination,
+    IPaginationOptions,
+  } from 'nestjs-typeorm-paginate';
 
 @ApiTags('annuaire')
 @Injectable()
@@ -11,6 +16,10 @@ export class AnnuaireService {
         @InjectRepository(Annuaire)
         private readonly annuaireRepository : Repository<Annuaire>
     ){}
+
+    async paginate(options: IPaginationOptions): Promise<Pagination<Annuaire>> {
+        return paginate<Annuaire>(this.annuaireRepository, options);
+      }
 
     findAll(): Promise<Annuaire[]> {
         return this.annuaireRepository.find();
