@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Param, Query, Body } from '@nestjs/common';
+import { Controller, Get, Post, Param, Body } from '@nestjs/common';
 import { ArticleService } from './article.service';
 import { Article } from './article.entity';
 import { ApiTags } from '@nestjs/swagger';
@@ -17,7 +17,7 @@ export class ArticleController {
 
     @Get(':id')
     getArticlesById( @Param('id') id: number ) {
-        return this.articleService.findAll();
+        return this.articleService.findByid(id);
     }
 
     @Post()

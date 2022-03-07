@@ -6,22 +6,24 @@ import { AuthorModule } from './author/author.module';
 import { ArticleModule } from './article/article.module';
 import { ArticleService } from './article/article.service';
 import { Article } from './article/article.entity';
+import { AnnuaireModule } from './annuaire/annuaire.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'mysql',
+      type: 'mongodb',
       host: 'localhost',
-      port: 3306,
-      username: 'root',
+      port: 27017,
+      username: '',
       password: '',
-      database: 'tuto_nest',
+      database: 'test_idruide',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
     TypeOrmModule.forFeature([Article]),
     AuthorModule,
     ArticleModule,
+    AnnuaireModule,
   ],
   controllers: [AppController],
   providers: [AppService,ArticleService],
