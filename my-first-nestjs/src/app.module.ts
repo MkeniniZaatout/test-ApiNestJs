@@ -15,7 +15,7 @@ import { Article } from './article/article.entity';
       port: 3306,
       username: 'root',
       password: '',
-      database: 'test_idruide',
+      database: 'tuto_nest',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),

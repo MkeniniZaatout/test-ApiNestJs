@@ -1,7 +1,9 @@
 import { Controller, Get, Post, Param, Query, Body } from '@nestjs/common';
 import { ArticleService } from './article.service';
 import { Article } from './article.entity';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('article')
 @Controller('article')
 export class ArticleController {
     constructor(private readonly articleService : ArticleService) {

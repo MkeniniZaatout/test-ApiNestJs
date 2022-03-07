@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
 import { Author } from '../author/author.entity';
+import { ApiProperty } from '@nestjs/swagger';
 
 @Entity({})
 export class Article {
@@ -21,6 +22,7 @@ export class Article {
     })
     likes: number;
 
+    @ApiProperty({ type: () => Author })
     @ManyToOne(() => Author, author => author.articles)
     author: Author;
 
