@@ -23,12 +23,28 @@ export class AnnuaireService {
         return this.annuaireRepository.find();
     }
 
-    findByid(id: string): Promise<Annuaire> {
-        return this.annuaireRepository.findOne(id)
+    findByType(Type_etablissement : string): Promise<Annuaire[]> {
+        return this.annuaireRepository.find({ Type_etablissement })
+    }
+
+    findByid(Identifiant_de_l_etablissement: string): Promise<Annuaire> {
+        return this.annuaireRepository.findOne({Identifiant_de_l_etablissement})
+    }
+
+    findByGeolocalisation() : Promise<Annuaire[]> {
+        return this.annuaireRepository.find({});
     }
 
     create(annuaire: Annuaire) : Promise<Annuaire> {
         return this.annuaireRepository.save(annuaire);
 
+    }
+
+    findByPostal(Code_postal:number) : Promise<Annuaire[]> {
+        return this.annuaireRepository.find({ Code_postal })
+    }
+
+    findByDepartement(Type_etablissement : string) : Promise<Annuaire []> {
+        return this.annuaireRepository.find({Type_etablissement});
     }
 }
