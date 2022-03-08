@@ -7,17 +7,20 @@ import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      envFilePath: '.development.env',
+      isGlobal: true
+    }),
     TypeOrmModule.forRoot({
       type: 'mongodb',
-      host: 'localhost',
-      port: 27017,
+      host: process.env.HOST,
+      port: parseInt(process.env.DATABASE_PORT),
       username: '',
       password: '',
-      database: 'test_idruide',
+      database: process.env.DATABASE_NAME,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    ConfigModule.forRoot(),
     AnnuaireModule,
   ],
   controllers: [AppController],
