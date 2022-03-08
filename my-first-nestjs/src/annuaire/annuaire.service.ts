@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Double, Repository } from 'typeorm';
 import { ApiTags } from '@nestjs/swagger';
 import { Annuaire } from './annuaire.entity';
 import { paginate,Pagination,IPaginationOptions,} from 'nestjs-typeorm-paginate';
@@ -23,6 +23,7 @@ export class AnnuaireService {
         return this.annuaireRepository.find();
     }
 
+    
     findByType(Type_etablissement : string): Promise<Annuaire[]> {
         return this.annuaireRepository.find({ Type_etablissement })
     }
@@ -31,13 +32,13 @@ export class AnnuaireService {
         return this.annuaireRepository.findOne({Identifiant_de_l_etablissement})
     }
 
-    findByGeolocalisation() : Promise<Annuaire[]> {
-        return this.annuaireRepository.find({});
+    findByPosition(latitude: number, longitude: number) : Promise<Annuaire> {
+        const position : string = `${latitude},${longitude}`;
+        return this.annuaireRepository.findOne({position});
     }
 
     create(annuaire: Annuaire) : Promise<Annuaire> {
         return this.annuaireRepository.save(annuaire);
-
     }
 
     findByPostal(Code_postal:number) : Promise<Annuaire[]> {

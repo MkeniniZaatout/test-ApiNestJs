@@ -7,6 +7,7 @@ import { ArticleModule } from './article/article.module';
 import { ArticleService } from './article/article.service';
 import { Article } from './article/article.entity';
 import { AnnuaireModule } from './annuaire/annuaire.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { AnnuaireModule } from './annuaire/annuaire.module';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
+    ConfigModule.forRoot(),
     TypeOrmModule.forFeature([Article]),
     AuthorModule,
     ArticleModule,
