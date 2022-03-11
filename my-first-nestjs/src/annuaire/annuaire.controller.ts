@@ -57,8 +57,9 @@ export class AnnuaireController {
      * @param {string} _Libelle_departement type of schools
      */
     @Get('Libelle_departement/:Libelle_departement')
-    getByDepartement(@Param('Libelle_departement') _Libelle_departement: string) {
-        return this.annuaireService.findByDepartement(_Libelle_departement);
+    getByDepartement(@Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number = 1,
+    @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number = 10, @Param('Libelle_departement') _Libelle_departement: string) {
+        return this.annuaireService.findByDepartement({page,limit}, _Libelle_departement);
     }
 
     /**
