@@ -24,8 +24,8 @@ export class AnnuaireService {
         return this.annuaireRepository.find();
     }
 
-    async findByDepartement(options: IPaginationOptions,_Libelle_departement : string) : Promise<Pagination<Annuaire>> {
-        return paginate<Annuaire>(this.annuaireRepository,options, {Libelle_departement:_Libelle_departement});
+    async findByDepartement(Libelle_departement : string) : Promise<Annuaire[]> {
+        return this.annuaireRepository.find({Libelle_departement});
     }
 
     async findByType(options: IPaginationOptions, Type_etablissement: string): Promise<Pagination<Annuaire>> {
