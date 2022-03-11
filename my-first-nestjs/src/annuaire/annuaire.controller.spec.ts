@@ -23,7 +23,7 @@ describe('AnnuaireController', () => {
       const result: any = {};
       const id: string = uniqid();
       // Act
-      jest.spyOn(service, 'findByid').mockImplementation(() => result);
+      //jest.spyOn(service, 'findByid').mockImplementation(() =>     );
       // Assert
       expect(await controller.getAnnuaireById(id)).toBe(result);
     });
