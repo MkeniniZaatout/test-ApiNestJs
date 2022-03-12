@@ -32,7 +32,7 @@ export class AnnuaireController {
     }
 
     /**
-     * Searching by the Postal Code 
+     * Searching by the Zip Code 
      * @param {number} _Code_postal Postal Code
      */
     @Get('Code_postal/:Code_postal')
@@ -43,7 +43,7 @@ export class AnnuaireController {
     }
 
     /**
-     * Searching by the type of schools
+     * Searching by type of schools.
      * @param {string} _Type_etablissement type of schools
      */
     @Get('Type_etablissement/:Type_etablissement')
@@ -54,7 +54,7 @@ export class AnnuaireController {
     }
 
     /**
-     * Searching for administrative divisions
+     * Searching by departement.
      * @param {string} _Libelle_departement type of schools
      */
     @Get('Libelle_departement/:Libelle_departement')
@@ -64,7 +64,7 @@ export class AnnuaireController {
     }
 
     /**
-     * Search by geolocation.
+     * Search by geolocation with lattitude and longitude.
      * @param {number} _latitude 
      * @param {number} _longitude 
      */
