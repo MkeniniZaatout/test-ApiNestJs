@@ -23,7 +23,7 @@ export class AnnuaireController {
     }
 
     /**
-     * 
+     * Find school by unique identifier.
      * @param {string} _id unique identifier
      */
     @Get('id/:id')
@@ -32,16 +32,18 @@ export class AnnuaireController {
     }
 
     /**
-     * Searching for the Postal Code
+     * Searching by the Postal Code 
      * @param {number} _Code_postal Postal Code
      */
     @Get('Code_postal/:Code_postal')
-    getAnnuaireByPostalCode(@Param('Code_postal') _Code_postal: number) {
-        return this.annuaireService.findByPostal(_Code_postal);
+    getAnnuaireByPostalCode(@Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number = 1,
+    @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number = 10,
+    @Param('Code_postal') _Code_postal: number) {
+        return this.annuaireService.findByPostal({page, limit},_Code_postal);
     }
 
     /**
-     * Searching for the type of schools
+     * Searching by the type of schools
      * @param {string} _Type_etablissement type of schools
      */
     @Get('Type_etablissement/:Type_etablissement')
@@ -50,7 +52,6 @@ export class AnnuaireController {
     @Param('Type_etablissement') _Type_etablissement: string) {
         return this.annuaireService.findByType({page,limit},_Type_etablissement);
     }
-
 
     /**
      * Searching for administrative divisions
