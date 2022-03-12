@@ -5,6 +5,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { Annuaire } from './annuaire.entity';
 import { paginate,Pagination,IPaginationOptions,} from 'nestjs-typeorm-paginate';
 
+
 @ApiTags('annuaire')
 @Injectable()
 export class AnnuaireService {

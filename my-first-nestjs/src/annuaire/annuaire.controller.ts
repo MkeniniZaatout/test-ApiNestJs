@@ -19,7 +19,7 @@ export class AnnuaireController {
     getAnnuaire(@Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number = 1,
     @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number = 10): Promise<Pagination<Annuaire>> {
         limit = limit > 100 ? 100 : limit;
-        return this.annuaireService.paginate({page,limit});
+        return this.annuaireService.paginate({page,limit,countQueries:false});
     }
 
     /**
@@ -39,7 +39,7 @@ export class AnnuaireController {
     getAnnuaireByPostalCode(@Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number = 1,
     @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number = 10,
     @Param('Code_postal') _Code_postal: number) {
-        return this.annuaireService.findByPostal({page, limit},_Code_postal);
+        return this.annuaireService.findByPostal({page, limit},Number(_Code_postal));
     }
 
     /**
@@ -50,7 +50,7 @@ export class AnnuaireController {
     getAnnuaireByType(@Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number = 1,
     @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number = 10, 
     @Param('Type_etablissement') _Type_etablissement: string) {
-        return this.annuaireService.findByType({page,limit},_Type_etablissement);
+        return this.annuaireService.findByType({page,limit,countQueries:false},_Type_etablissement);
     }
 
     /**
@@ -60,7 +60,7 @@ export class AnnuaireController {
     @Get('Libelle_departement/:Libelle_departement')
     getByDepartement(@Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number = 1,
     @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number = 10, @Param('Libelle_departement') _Libelle_departement: string) {
-        return this.annuaireService.findByDepartement({page,limit}, _Libelle_departement);
+        return this.annuaireService.findByDepartement({page,limit, countQueries:false}, _Libelle_departement);
     }
 
     /**
