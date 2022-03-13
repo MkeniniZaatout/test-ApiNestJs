@@ -5,10 +5,10 @@
 -Doc : swagger.
 
 #Installation BDD :
--Install mongoDb Community edition on this link: https://www.mongodb.com/try/download/community(accept to install mongodb compass).
--Start mangoDb Compass , Create database: "test_idruide", in database test_idruide Create collection "annuaire".
--Unzip the directory.zip to get file "annuaire.json".   
--In collection annuaire select import data and import data JSON FILE and select file annuaire.json.
+- Install mongoDb Community edition on this link: https://www.mongodb.com/try/download/community(accept to install mongodb compass).
+- Start mangoDb Compass , Create database: "test_idruide", in database test_idruide Create collection "annuaire".
+- Unzip the directory.zip to get file "annuaire.json".   
+- In collection annuaire select import data and import data JSON FILE and select file annuaire.json.
 
 #Start API :
 - Go to \my-first-nestjs, run start console and start "npm install" 
