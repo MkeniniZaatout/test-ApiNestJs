@@ -1,8 +1,9 @@
+import { ApiBody } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjsx/crud/lib/crud';
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity({})
+@Entity()
 export class Annuaire {
-
     @PrimaryGeneratedColumn()
     Identifiant_de_l_etablissement: string;
 
