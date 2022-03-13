@@ -1,8 +1,8 @@
 # test-ApiNestJs
 
--DB : MangoDB.
--Pagination : nestjs-typeorm-paginate.
--Doc : swagger.
+- DB : MangoDB.
+- Pagination : nestjs-typeorm-paginate.
+- Doc : swagger.
 
 #Installation BDD :
 - Install mongoDb Community edition on this link: https://www.mongodb.com/try/download/community(accept to install mongodb compass).
