@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ApiTags } from '@nestjs/swagger';
 import { Annuaire } from './annuaire.entity';
-import { paginate,Pagination,IPaginationOptions,} from 'nestjs-typeorm-paginate';
+import { paginate,Pagination,IPaginationOptions} from 'nestjs-typeorm-paginate';
 
 
 @ApiTags('annuaire')

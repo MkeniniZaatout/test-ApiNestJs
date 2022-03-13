@@ -1,9 +1,15 @@
-import { Controller, Get, Post, Param, Query, Body, ParseIntPipe, DefaultValuePipe, Res, Header, HttpException, HttpStatus, Req } from '@nestjs/common';
+import { 
+    Controller, 
+    Get, 
+    Param, 
+    Query, 
+    ParseIntPipe, 
+    DefaultValuePipe 
+} from '@nestjs/common';
 import { AnnuaireService } from '../annuaire/annuaire.service';
 import { Annuaire } from './annuaire.entity';
 import { Pagination } from 'nestjs-typeorm-paginate';
-import { ApiOkResponse, ApiProperty, ApiResponse, ApiTags,ApiBody, ApiQuery, ApiParam } from '@nestjs/swagger';
-import { Response } from 'express';
+import { ApiTags, ApiQuery, ApiParam } from '@nestjs/swagger';
 
 @ApiTags('annuaire')
 @Controller('annuaire')
