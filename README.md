@@ -4,7 +4,7 @@
 - Pagination : nestjs-typeorm-paginate.
 - Doc : swagger.
 
-#Installation BDD :
+#Instal BDD :
 - Install mongoDb Community edition on this link: https://www.mongodb.com/try/download/community(accept to install mongodb compass).
 - Start mangoDb Compass , Create database: "test_idruide", in database test_idruide Create collection "annuaire".
 - Unzip the directory.zip to get file "annuaire.json".   
