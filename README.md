@@ -11,7 +11,7 @@
 - In collection annuaire select import data and import data JSON FILE and select file annuaire.json.
 
 #Start API :
-- Go to \my-first-nestjs, run start console and start "npm install" 
+- Start a console terminal and go to \my-first-nestjs directory, then run "npm install" 
 and "npm start" (run "npm cache clean --force" if you got error in console).
 
 #Start Documentation and Test API:
