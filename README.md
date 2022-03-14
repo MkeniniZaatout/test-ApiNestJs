@@ -14,5 +14,5 @@
 - Start a console terminal and go to \my-first-nestjs directory, then run "npm install" 
 and "npm start" (run "npm cache clean --force" if you got error in console).
 
-#Start Documentation and Test API:
+#Start Documentation and Test API :
 - Go to http://localhost:3000/swagger/ when API is start.
